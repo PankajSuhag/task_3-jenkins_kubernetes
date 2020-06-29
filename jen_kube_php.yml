@@ -45,7 +45,6 @@ spec:
     spec:
       containers:
       - image: vimal13/apache-webserver-php
-
         name: php
         ports:
         - containerPort: 32000

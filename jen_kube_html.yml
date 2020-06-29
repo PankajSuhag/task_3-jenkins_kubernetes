@@ -12,7 +12,9 @@ spec:
   selector:
     app: apache
   type: LoadBalancer
+
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -24,8 +26,10 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 2Gi
+
 ---
+
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -44,9 +48,7 @@ spec:
         app: apache
     spec:
       containers:
-      - image: 
-vimal13/apache-webserver-php
-
+      - image: vimal13/apache-webserver-php
         name: apache
         ports:
         - containerPort: 31000
